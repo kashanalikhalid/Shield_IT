@@ -134,7 +134,7 @@ function Header() {
                       href="#pablo"
                       onClick={(e) => e.preventDefault()}
                   >
-                    <span className="no-icon">{userInfo.name}</span>
+                    <span className="no-icon">check</span>
                   </Nav.Link>
                 </Nav.Item>
                 {/*<Dropdown as={Nav.Item}>*/}

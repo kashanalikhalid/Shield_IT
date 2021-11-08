@@ -34,12 +34,8 @@ function Admin({history}) {
   const [hasImage, setHasImage] = React.useState(true);
   const location = useLocation();
   const mainPanel = React.useRef(null);
-  const userLogin=useSelector(state=>state.userLogin)
-  const {loading,error,userInfo}=userLogin
 
-  useEffect(()=>{
 
-  },[userInfo])
 
   const redirect=(url)=> <Redirect to={`${url}`}/>
 
@@ -60,8 +56,7 @@ function Admin({history}) {
   };
   React.useEffect(() => {
 
-    if(userInfo!==null && userInfo.type==="Admin")
-    {
+
       document.documentElement.scrollTop = 0;
       document.scrollingElement.scrollTop = 0;
       mainPanel.current.scrollTop = 0;
@@ -74,19 +69,12 @@ function Admin({history}) {
         element.parentNode.removeChild(element);
       }
 
-    }
+
 
 
   }, [location]);
 
   const adminPage=()=>{
-    if(userInfo==null)
-      return redirect('/login');
-    else if(userInfo.type!=="Admin")
-    {
-      return redirect('/403')
-    }
-    else{
       return (
           <div>
             <div className="wrapper">
@@ -108,7 +96,7 @@ function Admin({history}) {
             {/*/>*/}
           </div>
       )
-    }
+
   }
   return (
 

@@ -4,7 +4,8 @@ html,body{
 }
 
 .login{
-    background: black;
+    background: rgb(34,34,34);
+    background: linear-gradient(176deg, rgba(34,34,34,1) 0%, rgba(107,107,107,1) 84%);
     width:100vw;
     background-size:cover;
     height:100vh;
@@ -112,11 +113,7 @@ html,body{
     width:400px !important;
 }
 
-@media only screen and (max-width: 600px) {
-    .yellow-form-field{
-        width:100vw !important;
-    }
-}
+
 
 
 .yellow-form-field:focus{
@@ -160,9 +157,18 @@ position:absolute;
     font-family:'Nunito';
     font-weight:bold;
     color:#baa000;
-    font-size:20px;
+    font-size:20px !important;
     margin-top:-5px;
     margin-left:220px;
+}
+
+@media only screen and (max-width: 600px) {
+    .login-forgot {
+        font-size:12px !important;
+    }
+    .yellow-form-field{
+        width:100vw !important;
+    }
 }
 
 .login-social
@@ -206,4 +212,15 @@ position:absolute;
     margin-top: -8px !important;
     display:none !important;
 
+}
+
+.login-signup
+{
+    color:white;
+}
+
+.login-signup span
+{
+    color:#baa000;
+    cursor: pointer;
 }

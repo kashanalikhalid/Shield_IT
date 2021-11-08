@@ -34,11 +34,14 @@ const Login = ({history}) => {
             <div className="login">
                 <div className="login-container d-flex flex-column align-items-center">
                     <img  src={logo} width={300} height={100} alt="logo"/>
-                    <h2 className='login-welcome'>Welcome back to Shield IT</h2>
+                    <h2 className='login-welcome'>Create an account</h2>
 
 
                     <Form >
                             <Col className="mt-3" md="12">
+
+
+
                                 <Form.Group className="yellow-form-group mt-4">
                                     <Form.Control
                                         className="yellow-form-field"
@@ -69,7 +72,8 @@ const Login = ({history}) => {
 
                     </Form>
                     <h3 className="login-forgot">Forgot Password?</h3>
-                    <YellowButton type="Submit" width={200} content="Login"/>
+                    <YellowButton onClick={()=>{history.push('/admin/dashboard')}} className="mt-3" type="Submit" width={300} content="Sign In"/>
+                    <p className="login-signup mt-3">Dont have an account? <span onClick={()=>{history.push('/signup')}}>Sign up</span></p>
                 </div>
 
 

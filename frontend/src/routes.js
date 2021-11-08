@@ -16,6 +16,7 @@
 
 */
 import Dashboard from "views/Dashboard.js";
+import SignUp from "./layouts/SignUp";
 
 
 const dashboardRoutes = [
