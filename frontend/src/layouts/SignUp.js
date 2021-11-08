@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import {useDispatch,useSelector} from "react-redux";
 import SignInLoader from "../components/Loaders/signInLoader";
-import '../assets/css/login.css'
+import '../assets/css/registration.css'
 import logo from '../assets/img/logo.png'
 import { faKey, faEnvelope,faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -35,7 +35,7 @@ const Login = ({history}) => {
 
     return (
         <div className="login">
-            <div className="login-container d-flex flex-column align-items-center">
+            <div className="signup-container mt-md-5 pt-md-5 d-flex flex-column align-items-center">
                 <img  src={logo} width={300} height={100} alt="logo"/>
                 <h2 className='login-welcome'>Create An Account</h2>
 

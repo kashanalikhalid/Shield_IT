@@ -21,23 +21,13 @@ import {useDispatch, useSelector} from "react-redux";
 function Dashboard({history}) {
 
   const dispatch= useDispatch()
-  const bus =useSelector(state=>state.busCount)
-  const student =useSelector(state=>state.studentCount)
-  const driver =useSelector(state=>state.driverCount)
 
-  const {busLoading,busCount}=bus
-  const {studentLoading,studentCount}=student
-  const {driverLoading,driverCount}=driver
 
   useEffect(()=>{
-    dispatch(countStudent())
-    dispatch(countDriver())
-    dispatch(countBus())
   },[dispatch])
 
   const showDashboad=()=>{
-    if(busLoading==false && studentLoading==false && driverLoading ==false)
-    {
+
         return( <Container fluid>
         <Row>
           <Col lg="3" sm="6">
@@ -52,18 +42,12 @@ function Dashboard({history}) {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Students</p>
-                      <Card.Title as="h4">{studentCount.data.count}</Card.Title>
+                      <Card.Title as="h4">check</Card.Title>
                     </div>
                   </Col>
                 </Row>
               </Card.Body>
-              <Card.Footer>
-                <hr></hr>
-                <div className="stats">
-                  <i className="fas fa-redo mr-1"></i>
-                  Update Now
-                </div>
-              </Card.Footer>
+
             </Card>
           </Col>
           <Col lg="3" sm="6">
@@ -78,18 +62,12 @@ function Dashboard({history}) {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Buses</p>
-                      <Card.Title as="h4">{busCount.data.count}</Card.Title>
+                      <Card.Title as="h4">check</Card.Title>
                     </div>
                   </Col>
                 </Row>
               </Card.Body>
-              <Card.Footer>
-                <hr></hr>
-                <div className="stats">
-                  <i className="fas fa-redo mr-1"></i>
-                  Update Now
-                </div>
-              </Card.Footer>
+
             </Card>
           </Col>
           <Col lg="3" sm="6">
@@ -104,18 +82,11 @@ function Dashboard({history}) {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Drivers</p>
-                      <Card.Title as="h4">{driverCount.data.count}</Card.Title>
+                      <Card.Title as="h4">check</Card.Title>
                     </div>
                   </Col>
                 </Row>
               </Card.Body>
-              <Card.Footer>
-                <hr></hr>
-                <div className="stats">
-                  <i className="fas fa-redo mr-1"></i>
-                  Update Now
-                </div>
-              </Card.Footer>
             </Card>
           </Col>
           <Col lg="3" sm="6">
@@ -135,13 +106,7 @@ function Dashboard({history}) {
                   </Col>
                 </Row>
               </Card.Body>
-              <Card.Footer>
-                <hr></hr>
-                <div className="stats">
-                  <i className="fas fa-redo mr-1"></i>
-                  Update now
-                </div>
-              </Card.Footer>
+
             </Card>
           </Col>
         </Row>
@@ -498,7 +463,7 @@ function Dashboard({history}) {
         {/*</Row>*/}
       </Container>)
     }
-  }
+
 
   return (
     <>{showDashboad()}

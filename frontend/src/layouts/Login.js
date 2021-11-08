@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import {useDispatch,useSelector} from "react-redux";
 import SignInLoader from "../components/Loaders/signInLoader";
-import '../assets/css/login.css'
+import '../assets/css/registration.css'
 import logo from '../assets/img/logo.png'
 import { faKey, faEnvelope, } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -71,7 +71,7 @@ const Login = ({history}) => {
                             </Col>
 
                     </Form>
-                    <h3 className="login-forgot">Forgot Password?</h3>
+                    <h3 onClick={()=>{history.push('/forgotpassword')}} className="login-forgot">Forgot Password?</h3>
                     <YellowButton onClick={()=>{history.push('/admin/dashboard')}} className="mt-3" type="Submit" width={300} content="Sign In"/>
                     <p className="login-signup mt-3">Dont have an account? <span onClick={()=>{history.push('/signup')}}>Sign up</span></p>
                 </div>

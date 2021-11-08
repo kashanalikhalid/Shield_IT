@@ -5,6 +5,10 @@
 
 
 }
+.sidebar .logo-img img {
+    max-width: 150px;
+    max-height: 150px;
+}
 
 /*#dropdown-button-drop-right*/
 /*{*/
@@ -25,6 +29,10 @@
 
 }
 
+.sidebar{
+    background: rgb(34,34,34) !important;
+    background: linear-gradient(176deg, rgba(34,34,34,1) 0%, rgba(107,107,107,1) 84%) !important;
+}
 .btn-dropdownnested-item
 {
 

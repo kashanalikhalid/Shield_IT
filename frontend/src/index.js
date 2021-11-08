@@ -6,6 +6,7 @@ import store from './store'
 import Login from 'layouts/Login'
 import SignUp from "./layouts/SignUp";
 import Forbidden from "./views/403";
+import ForgotPassword from "./views/ForgotPassword";
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
@@ -26,6 +27,7 @@ ReactDOM.render(
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
       <Route path="/login" render={(props) => <Login {...props} />} />
       <Route path="/signup" render={(props) => <SignUp {...props} />} />
+      <Route path="/forgotpassword" render={(props) => <ForgotPassword {...props} />} />
       <Route path="/403" render={(props) => <Forbidden {...props} />} />
       <Redirect from="/" to="/login"/>
     </Switch>

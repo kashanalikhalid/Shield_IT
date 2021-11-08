@@ -17,10 +17,6 @@ function Sidebar({ color, image, routes }) {
     <div className="sidebar" data-image={image} data-color={color}>
       <div
         className="sidebar-background"
-        style={{
-          backgroundImage: "url(" + image + ")",
-
-        }}
       />
       <div className="sidebar-wrapper">
         <div className="logo d-flex align-items-center justify-content-start">
@@ -29,14 +25,11 @@ function Sidebar({ color, image, routes }) {
             className="simple-text logo-mini mx-1"
           >
             <div className="logo-img">
-              {/*<img*/}
-              {/*  src={require("assets/img/logo2.png").default}*/}
-              {/*  alt="..."*/}
-              {/*/>*/}
+              <img
+                src={require("assets/img/logo.png").default}
+                alt="..."
+              />
             </div>
-          </a>
-          <a className="simple-text" href="http://www.creative-tim.com">
-            BusX
           </a>
         </div>
         <Nav>
@@ -51,72 +44,37 @@ function Sidebar({ color, image, routes }) {
             </NavLink>
           </li>
 
-          <li
-              className={
-                activeRoute('/admin/profile')
-              }
-          >
-              <NavLink   className="nav-link" to={'/admin/profile'}>
-                  <span> <i className='nc-icon nc-circle-09' /> <p>User Profile </p> </span>
-              </NavLink>
-          </li>
-
             <li
                 className={
-                    activeRoute('/admin/trackbuses')
+                    activeRoute('/admin/Employees')
                 }
             >
-                <NavLink to='/admin/trackbuses'   className="nav-link" >
-                    <span> <i className='nc-icon nc-square-pin' /> <p>Track buses</p> </span>
+                <NavLink   className="nav-link" to={'/admin/dashboard'}>
+                    <span> <i className='nc-icon nc-chart-pie-35' /> <p>Employees </p> </span>
                 </NavLink>
             </li>
 
 
-            <li
+            <li style={{borderBottom:'1px solid gray'}}
                 className={
-                    activeRoute('/admin/routes')
+                    activeRoute('/admin/socialgraphs')
                 }
             >
-                <NavLink to='/admin/routes'   className="nav-link" >
-                    <span> <i className='nc-icon nc-map-big' /> <p>Routes</p> </span>
+                <NavLink   className="nav-link" to={'/admin/dashboard'}>
+                    <span> <i className='nc-icon nc-chart-pie-35' /> <p>Social Graphs </p> </span>
                 </NavLink>
             </li>
 
 
-            <li
-                className={
-                    activeRoute('/admin/drivers')
-                }
-            >
-                <NavLink to='/admin/drivers'   className="nav-link">
-                    <span> <i className='nc-icon nc-single-02' /> <p>Drivers</p> </span>
-                </NavLink>
-
-            </li>
-
-            <li
-                className={
-                    activeRoute('/admin/assets')
-                }
-            >
-                <NavLink to='/admin/assets'   className="nav-link">
-                    <span> <i className='nc-icon nc-bus-front-12' /> <p>Assets</p> </span>
-                </NavLink>
-
-            </li>
 
 
 
-                <li
-                    className={
-                        activeRoute('/admin/fuel')
-                    }
-                >
-                    <NavDropdown title={<span> <i className='nc-icon nc-chart-bar-32' /> <p>Fuel Management</p> </span>}   onClick={()=>{history.push('/admin/fuel')}}>
-                        <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
 
-                    </NavDropdown>
-            </li>
+
+
+
+
+
 
 
 
