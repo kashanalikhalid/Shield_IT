@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import ChartistGraph from "react-chartist";
 import Graph from "react-graph-vis";
-
+import '../assets/css/dashboard.css'
+import CanvasJSReact from '../assets/canvasJs/canvasjs.react';
 
 import {
   Badge,
@@ -32,36 +33,36 @@ function Dashboard({history}) {
 
     const graph = {
       nodes: [
-        { id: 0, label: "Kashan \n Marketing", group: 3  },
-        { id: 1, label: "1", group: 3 },
-        { id: 2, label: "2", group: 3 },
-        { id: 3, label: "3", group: 2 },
-        { id: 4, label: "4", group: 2 },
-        { id: 5, label: "5", group: 2 },
-        { id: 6, label: "6", group: 2 },
-        { id: 7, label: "7", group: 2 },
-        { id: 8, label: "8", group: 2 },
-        { id: 9, label: "9", group: 3 },
-        { id: 10, label: "10", group: 3 },
-        { id: 11, label: "11", group: 3 },
-        { id: 12, label: "12", group: 3 },
-        { id: 13, label: "13", group: 3 },
-        { id: 14, label: "14", group: 3 },
-        { id: 15, label: "15", group: 2 },
-        { id: 16, label: "16", group: 3 },
-        { id: 17, label: "17", group: 3 },
-        { id: 18, label: "18", group: 3 },
-        { id: 19, label: "19", group: 3 },
-        { id: 20, label: "20", group: 3 },
-        { id: 21, label: "21", group: 3 },
-        { id: 22, label: "22", group: 3 },
-        { id: 23, label: "23", group: 3 },
-        { id: 24, label: "24", group: 3 },
-        { id: 25, label: "25", group: 3 },
-        { id: 26, label: "26", group: 3 },
-        { id: 27, label: "27", group: 3 },
-        { id: 28, label: "28", group: 3 },
-        { id: 29, label: "29", group: 3 },
+        { id: 0, label: "Kashan \n Marketing",color:"red"  },
+        { id: 1, label: "Muddasir \n Marketing", color:"red" },
+        { id: 2, label: "Kashan \n Marketing", color:"red" },
+        { id: 3, label: "Kashan \n Marketing", color:"red"},
+        { id: 4, label: "Kashan \n Marketing", color:"red" },
+        { id: 5, label: "Kashan \n Marketing", color:"red" },
+        { id: 6, label: "6", color:"green" },
+        { id: 7, label: "7", color:"green" },
+        { id: 8, label: "8", group: 2, color:"green" },
+        { id: 9, label: "9", group: 3, color:"green" },
+        { id: 10, label: "10", group: 3, color:"green" },
+        { id: 11, label: "11", group: 3, color:"green" },
+        { id: 12, label: "12", group: 3, color:"green" },
+        { id: 13, label: "13", group: 3, color:"green" },
+        { id: 14, label: "14", group: 3, color:"green" },
+        { id: 15, label: "15", group: 2, color:"green" },
+        { id: 16, label: "16", group: 3, color:"green" },
+        { id: 17, label: "17", group: 3, color:"green" },
+        { id: 18, label: "18", group: 3, color:"green" },
+        { id: 19, label: "19", group: 3, color:"green" },
+        { id: 20, label: "20", group: 3, color:"green" },
+        { id: 21, label: "21", group: 3, color:"green" },
+        { id: 22, label: "22", group: 3, color:"green" },
+        { id: 23, label: "23", group: 3, color:"green" },
+        { id: 24, label: "24", group: 3, color:"green" },
+        { id: 25, label: "25", group: 3, color:"green" },
+        { id: 26, label: "26", group: 3, color:"green" },
+        { id: 27, label: "27", group: 3, color:"green" },
+        { id: 28, label: "28", group: 3, color:"green" },
+        { id: 29, label: "29", group: 3, color:"green" },
       ],
       edges: [
         { from: 1, to: 0 },
@@ -99,7 +100,7 @@ function Dashboard({history}) {
     var options = {
       nodes: {
         shape: "dot",
-        size: 20,
+        size: 30,
         font: {
           size: 20,
           color: "black",
@@ -120,18 +121,18 @@ function Dashboard({history}) {
         return( <Container fluid>
         <Row>
           <Col lg="4" sm="6">
-            <Card className="card-stats">
+            <Card className="card-stats card-stats-bg-1">
               <Card.Body>
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-single-02 text-primary"></i>
+                      <i className=" text-white-util nc-icon nc-single-02 "></i>
                     </div>
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Total Employees</p>
-                      <Card.Title as="h4">284</Card.Title>
+                      <p className="card-category text-white-util">Total Employees</p>
+                      <Card.Title className="text-white-util" as="h4">284</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -140,18 +141,18 @@ function Dashboard({history}) {
             </Card>
           </Col>
           <Col lg="4" sm="6">
-            <Card className="card-stats">
+            <Card className="card-stats card-stats-bg-2">
               <Card.Body>
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-email-85 text-success"></i>
+                      <i className="nc-icon nc-email-85 text-white-util"></i>
                     </div>
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Total Emails</p>
-                      <Card.Title as="h4">3600</Card.Title>
+                      <p className=" text-white-util card-category">Total Emails</p>
+                      <Card.Title className="text-white-util" as="h4">3600</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -160,18 +161,18 @@ function Dashboard({history}) {
             </Card>
           </Col>
           <Col lg="4" sm="6">
-            <Card className="card-stats">
+            <Card className="card-stats card-stats-bg-3">
               <Card.Body>
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-bell-55 text-warning"></i>
+                      <i className="nc-icon nc-bell-55 text-white-util"></i>
                     </div>
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">No. of Risky Emails</p>
-                      <Card.Title as="h4">170</Card.Title>
+                      <p className=" text-white-util card-category">No. of Risky Emails</p>
+                      <Card.Title className="text-white-util" as="h4">170</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -180,21 +181,35 @@ function Dashboard({history}) {
             </Card>
           </Col>
         </Row>
-          <Row>
-            <Col xs={12}>
-              <div style={{height:"800px", width: '800px'}}>
+          <Row className="graphs-container">
+              <Col xs={6}>
+                <div style={{height:"800px", width: '800px'}}>
 
-                <Graph
-                    graph={graph}
-                    options={options}
-                    events={events}
-                    getNetwork={network => {
-                      //  if you want access to vis.js network api you can set the state in a parent component using this property
-                    }}
-                />
-              </div>
+                  <Graph
+                      graph={graph}
+                      options={options}
+                      events={events}
+                      getNetwork={network => {
+                        //  if you want access to vis.js network api you can set the state in a parent component using this property
+                      }}
+                  />
+                </div>
 
-            </Col>
+              </Col>
+              <Col xs={6}>
+                <div style={{height:"800px", width: '800px'}}>
+
+                  <Graph
+                      graph={graph}
+                      options={options}
+                      events={events}
+                      getNetwork={network => {
+                        //  if you want access to vis.js network api you can set the state in a parent component using this property
+                      }}
+                  />
+                </div>
+
+              </Col>
           </Row>
 
 

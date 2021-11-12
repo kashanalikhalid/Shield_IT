@@ -4,6 +4,7 @@ import { useLocation, NavLink, useHistory } from "react-router-dom";
 const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
 
 import {Nav, NavDropdown, SplitButton, Dropdown, DropdownButton} from "react-bootstrap";
+
 import '../../assets/css/sidebar.css'
 import {
     Button,
@@ -51,6 +52,16 @@ function Sidebar({ color, image, routes }) {
                 <span> <i className='nc-icon nc-chart-pie-35' /> <p>Dashboard </p> </span>
             </NavLink>
           </li>
+
+            <li
+                className={
+                    activeRoute('/admin/analytics')
+                }
+            >
+                <NavLink   className="nav-link" to={'/admin/analytics'}>
+                    <span> <i className='nc-icon nc-chart-pie-36' /> <p>Analaytics </p> </span>
+                </NavLink>
+            </li>
 
             <li
                 className={
