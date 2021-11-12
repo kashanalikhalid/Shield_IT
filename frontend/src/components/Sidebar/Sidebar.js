@@ -1,14 +1,22 @@
 
-import React, { Component } from "react";
+import React, {Component, useState} from "react";
 import { useLocation, NavLink, useHistory } from "react-router-dom";
 const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
 
 import {Nav, NavDropdown, SplitButton, Dropdown, DropdownButton} from "react-bootstrap";
 import '../../assets/css/sidebar.css'
-
+import {
+    Button,
+    Card,
+    Form,
+    Container,
+    Row,
+    Col, Modal, Alert
+} from "react-bootstrap";
 
 function Sidebar({ color, image, routes }) {
   const history=useHistory();
+  const [radio,setRadio]=useState('none')
   const location = useLocation();
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
@@ -50,7 +58,7 @@ function Sidebar({ color, image, routes }) {
                 }
             >
                 <NavLink   className="nav-link" to={'/admin/dashboard'}>
-                    <span> <i className='nc-icon nc-chart-pie-35' /> <p>Employees </p> </span>
+                    <span> <i className='nc-icon nc-single-02' /> <p>Employees </p> </span>
                 </NavLink>
             </li>
 
@@ -61,64 +69,57 @@ function Sidebar({ color, image, routes }) {
                 }
             >
                 <NavLink   className="nav-link" to={'/admin/dashboard'}>
-                    <span> <i className='nc-icon nc-chart-pie-35' /> <p>Social Graphs </p> </span>
+                    <span> <i className='nc-icon nc-chart-bar-32' /> <p>Social Graphs </p> </span>
+                </NavLink>
+            </li>
+
+            <li
+                className={
+                    activeRoute('/admin/socialgraphs')
+                }
+            >
+                <NavLink onClick={()=>{setRadio('Default')}}   className="nav-link" to={'/admin/dashboard'}>
+                    <span onClick={()=>{setRadio("Default")}} style={{backgroundColor: `${radio==='Default' ?'#baa000':'transparent'}`}} className="dot"></span>
+
+                    <span className="radio-label">  <p>Default </p> </span>
+                </NavLink>
+            </li>
+
+            <li
+                className={
+                    activeRoute('/admin/socialgraphs')
+                }
+            >
+                <NavLink   className="nav-link" to={'/admin/dashboard'} onClick={()=>{setRadio('Threats')}}>
+                    <span onClick={()=>{setRadio("Threats")}} style={{backgroundColor: `${radio==='Threats' ?'#baa000':'transparent'}`}} className="dot"></span>
+                    <span>  <p>Threats </p> </span>
+                </NavLink>
+            </li>
+
+            <li
+                className={
+                    activeRoute('/admin/socialgraphs')
+                }
+            >
+                <NavLink onClick={()=>{setRadio('Outsider')}}   className="nav-link" to={'/admin/dashboard'}>
+                    <span onClick={()=>{setRadio("Outsider")}} style={{backgroundColor: `${radio==='Outsider' ?'#baa000':'transparent'}`}} className="dot"></span>
+                    <span>  <p>Outsider </p> </span>
                 </NavLink>
             </li>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
             <li
                 className={
-                    activeRoute('/admin/data')
+                    activeRoute('/admin/socialgraphs')
                 }
             >
-                <NavDropdown title={<span> <i className='nc-icon nc-app' /> <p>Data Management</p> </span>}>
-                    <DropdownButton variant='dropdownnested' id="dropdown-item-button" title={<span> <i  className='nc-icon nc-backpack dropdown-icon' /> <p className='dropdown-text'>Students</p> </span>}>
-                        <Dropdown.Item onClick={()=>{history.push('/admin/data/addstudent')}} className='btn-dropdownnested-item' as="button"><span> <i  className='dropdown-icon nc-icon nc-simple-add' /> <p className='dropdown-text'>Add Student</p> </span></Dropdown.Item>
-                        <Dropdown.Item onClick={()=>{history.push('/admin/data/studentlist')}} className='btn-dropdownnested-item' as="button"><span> <i  className='nc-icon nc-bullet-list-67 dropdown-icon' /> <p className='dropdown-text'>Students list</p> </span></Dropdown.Item>
-
-                    </DropdownButton>
-
-                    <DropdownButton variant='dropdownnested' id="dropdown-item-button" title={<span> <i  className='nc-icon nc-bus-front-12 dropdown-icon' /> <p className='dropdown-text'>Buses</p> </span>}>
-                        <Dropdown.Item onClick={()=>{history.push('/admin/data/addbus')}} className='btn-dropdownnested-item' as="button"><span> <i  className='dropdown-icon nc-icon nc-simple-add' /> <p className='dropdown-text'>Add Bus</p> </span></Dropdown.Item>
-                        <Dropdown.Item onClick={()=>{history.push('/admin/data/buslist')}} className='btn-dropdownnested-item' as="button"><span> <i  className='nc-icon nc-bullet-list-67 dropdown-icon' /> <p className='dropdown-text'>Bus list</p> </span></Dropdown.Item>
-
-                    </DropdownButton>
-
-                    <DropdownButton variant='dropdownnested' id="dropdown-item-button" title={<span> <i  className='nc-icon nc-single-02 dropdown-icon' /> <p className='dropdown-text'>Drivers</p> </span>}>
-                        <Dropdown.Item onClick={()=>{history.push('/admin/data/adddriver')}} className='btn-dropdownnested-item' as="button"><span> <i  className='dropdown-icon nc-icon nc-simple-add' /> <p className='dropdown-text'>Add Driver</p> </span></Dropdown.Item>
-                        <Dropdown.Item onClick={()=>{history.push('/admin/data/driverlist')}} className='btn-dropdownnested-item' as="button"><span> <i  className='nc-icon nc-bullet-list-67 dropdown-icon' /> <p className='dropdown-text'>Drivers list</p> </span></Dropdown.Item>
-
-                    </DropdownButton>
-
-
-
-
-                </NavDropdown>
+                <NavLink onClick={()=>{setRadio('Competitors')}}  className="nav-link" to={'/admin/dashboard'}>
+                   <span onClick={()=>{setRadio("Competitors")}} style={{backgroundColor: `${radio==='Competitors' ?'#baa000':'transparent'}`}} className="dot"></span>
+                    <span>  <p>Competitors </p> </span>
+                </NavLink>
             </li>
 
-            <li
-                className={
-                    activeRoute('/admin/license')
-                }
-            >
-                <NavDropdown title={<span> <i className='nc-icon nc-key-25' /> <p>Licensing</p> </span>}   onClick={()=>{history.push('/admin/license')}}>
-                    <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
 
-                </NavDropdown>
-
-            </li>
         </Nav>
       </div>
     </div>

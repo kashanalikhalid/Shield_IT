@@ -73,3 +73,17 @@
 {
     display: inline-block;
 }
+
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin-right:5px;
+    margin-top:5px;
+    background-color: transparent;
+    border:2px solid #baa000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
