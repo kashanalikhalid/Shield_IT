@@ -17,6 +17,9 @@
 */
 import Dashboard from "views/Dashboard.js";
 import SignUp from "./layouts/SignUp";
+import Employees from "./views/Employees";
+import Socialgraphs from "./views/Socialgraphs";
+import Analaytics from "./views/Analytics";
 
 
 const dashboardRoutes = [
@@ -24,8 +27,26 @@ const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    icon: "nc-icon nc-chart-pie-35",
     component: Dashboard,
+    layout: "/admin",
+  },
+
+  {
+    path: "/employees",
+    name: "Dashboard",
+    component: Employees,
+    layout: "/admin",
+  },
+
+  {
+    path: "/socialgraphs",
+    component: Socialgraphs,
+    layout: "/admin",
+  },
+
+  {
+    path: "/analytics",
+    component: Analaytics,
     layout: "/admin",
   },
 

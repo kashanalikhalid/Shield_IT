@@ -65,10 +65,10 @@ function Sidebar({ color, image, routes }) {
 
             <li
                 className={
-                    activeRoute('/admin/Employees')
+                    activeRoute('/admin/employees')
                 }
             >
-                <NavLink   className="nav-link" to={'/admin/dashboard'}>
+                <NavLink   className="nav-link" to={'/admin/employees'}>
                     <span> <i className='nc-icon nc-single-02' /> <p>Employees </p> </span>
                 </NavLink>
             </li>
@@ -79,52 +79,48 @@ function Sidebar({ color, image, routes }) {
                     activeRoute('/admin/socialgraphs')
                 }
             >
-                <NavLink   className="nav-link" to={'/admin/dashboard'}>
+                <NavLink   className="nav-link" to={'/admin/socialgraphs'}>
                     <span> <i className='nc-icon nc-chart-bar-32' /> <p>Social Graphs </p> </span>
                 </NavLink>
             </li>
 
             <li
                 className={
-                    activeRoute('/admin/socialgraphs')
+                    activeRoute('/admin/default')
                 }
             >
-                <NavLink onClick={()=>{setRadio('Default')}}   className="nav-link" to={'/admin/dashboard'}>
-                    <span onClick={()=>{setRadio("Default")}} style={{backgroundColor: `${radio==='Default' ?'#baa000':'transparent'}`}} className="dot"></span>
-
-                    <span className="radio-label">  <p>Default </p> </span>
+                <NavLink onClick={()=>{setRadio('Default')}}   className="nav-link" to={'/admin/default'}>
+                    <span> <i className='nc-icon nc-circle' /> <p>Default </p> </span>
                 </NavLink>
             </li>
 
             <li
                 className={
-                    activeRoute('/admin/socialgraphs')
+                    activeRoute('/admin/threats')
                 }
             >
-                <NavLink   className="nav-link" to={'/admin/dashboard'} onClick={()=>{setRadio('Threats')}}>
-                    <span onClick={()=>{setRadio("Threats")}} style={{backgroundColor: `${radio==='Threats' ?'#baa000':'transparent'}`}} className="dot"></span>
-                    <span>  <p>Threats </p> </span>
+                <NavLink   className="nav-link" to={'/admin/threats'} onClick={()=>{setRadio('Threats')}}>
+                    <span> <i className='nc-icon nc-light-3' /> <p>Threats </p> </span>
                 </NavLink>
             </li>
 
             <li
                 className={
-                    activeRoute('/admin/socialgraphs')
+                    activeRoute('/admin/outsider')
                 }
             >
-                <NavLink onClick={()=>{setRadio('Outsider')}}   className="nav-link" to={'/admin/dashboard'}>
-                    <span onClick={()=>{setRadio("Outsider")}} style={{backgroundColor: `${radio==='Outsider' ?'#baa000':'transparent'}`}} className="dot"></span>
-                    <span>  <p>Outsider </p> </span>
+                <NavLink onClick={()=>{setRadio('Outsider')}}   className="nav-link" to={'/admin/outsider'}>
+                    <span> <i className='nc-icon nc-cctv' /> <p>Threats </p> </span>
                 </NavLink>
             </li>
 
 
             <li
                 className={
-                    activeRoute('/admin/socialgraphs')
+                    activeRoute('/admin/Competitors')
                 }
             >
-                <NavLink onClick={()=>{setRadio('Competitors')}}  className="nav-link" to={'/admin/dashboard'}>
+                <NavLink onClick={()=>{setRadio('Competitors')}}  className="nav-link" to={'/admin/Competitors'}>
                    <span onClick={()=>{setRadio("Competitors")}} style={{backgroundColor: `${radio==='Competitors' ?'#baa000':'transparent'}`}} className="dot"></span>
                     <span>  <p>Competitors </p> </span>
                 </NavLink>

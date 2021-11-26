@@ -127,6 +127,11 @@ span{
     color:red;
 }
 
+.form-check-sign::after{
+    background:white !important;
+}
+
+
 .form-check{
     padding-left:0 !important;
 }
@@ -134,3 +139,6 @@ span{
 
 
 
+.form-check .form-check-sign::before, .form-check {
+    color: white;
+}

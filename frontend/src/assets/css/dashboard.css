@@ -1,27 +1,18 @@
-.card-stats-bg-1{
-    background: rgb(71,247,194);
-    background: linear-gradient(176deg, rgba(71,247,194,1) 0%, rgba(0,137,100,1) 84%);
-}
 
-.card-stats-bg-2{
-    background: rgb(0,121,152);
-    background: linear-gradient(176deg, rgba(0,121,152,1) 0%, rgba(118,206,233,1) 84%);
-}
-
-.card-stats-bg-3{
-    background: rgb(250,135,135);
-    background: linear-gradient(176deg, rgba(250,135,135,1) 0%, rgba(196,13,13,1) 84%);
-}
-
-.text-white-util
-{
-    color: white !important;
-    border-top:none !important;
-}
 
 .graphs-container{
     background-color:white !important;
     border-radius:30px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
 
+}
+
+.ct-chart{
+    overflow: hidden !important;
+    height:400px !important;
+}
+
+.height-util{
+    height:403px !important;
 }

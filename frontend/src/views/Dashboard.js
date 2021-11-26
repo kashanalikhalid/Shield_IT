@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from "react";
-import ChartistGraph from "react-chartist";
-import Graph from "react-graph-vis";
 import '../assets/css/dashboard.css'
 import CanvasJSReact from '../assets/canvasJs/canvasjs.react';
 
@@ -16,101 +14,131 @@ import {
   Col,
   Form,
   OverlayTrigger,
-  Tooltip,
 } from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 
 function Dashboard({history}) {
-
+  let CanvasJS = CanvasJSReact.CanvasJS;
+  let CanvasJSChart = CanvasJSReact.CanvasJSChart;
   const dispatch= useDispatch()
+
+
+  const emailOptions = {
+    theme: "light1",
+    animationEnabled: true,
+    axisY: {
+      title: "Emails"
+    },
+    toolTip: {
+      shared: true
+    },
+    legend: {
+      verticalAlign: "center",
+      horizontalAlign: "right",
+      reversed: true,
+      cursor: "pointer",
+    },
+    data: [{
+      type: "spline",
+      name: "Received",
+      showInLegend: true,
+      dataPoints: [
+        { y: 155, label: "Jan" },
+        { y: 150, label: "Feb" },
+        { y: 152, label: "Mar" },
+        { y: 148, label: "Apr" },
+        { y: 142, label: "May" },
+        { y: 150, label: "Jun" },
+        { y: 146, label: "Jul" },
+        { y: 149, label: "Aug" },
+        { y: 153, label: "Sept" },
+        { y: 158, label: "Oct" },
+        { y: 154, label: "Nov" },
+        { y: 150, label: "Dec" }
+      ]
+    },
+      {
+        type: "spline",
+        name: "Sent",
+        showInLegend: true,
+        dataPoints: [
+          { y: 172, label: "Jan" },
+          { y: 173, label: "Feb" },
+          { y: 175, label: "Mar" },
+          { y: 172, label: "Apr" },
+          { y: 162, label: "May" },
+          { y: 165, label: "Jun" },
+          { y: 172, label: "Jul" },
+          { y: 168, label: "Aug" },
+          { y: 175, label: "Sept" },
+          { y: 170, label: "Oct" },
+          { y: 165, label: "Nov" },
+          { y: 169, label: "Dec" }
+        ]
+      }]
+  }
+
+
+  const departmentOptions = {
+    theme: "light1",
+    animationEnabled: true,
+    axisY: {
+      title: "Threats"
+    },
+    toolTip: {
+      shared: true
+    },
+    legend: {
+      verticalAlign: "center",
+      horizontalAlign: "right",
+      reversed: true,
+      cursor: "pointer",
+    },
+
+    data: [{
+      type: "line",
+      color: 'green',
+      name: "Threats",
+      showInLegend: true,
+      dataPoints: [
+        { y: 5, label: "IT" },
+        { y: 10, label: "Marketing" },
+        { y: 12, label: "Design" },
+        { y: 18, label: "Sales" },
+        { y: 12, label: "Accounts" },
+      ]
+    },
+      ]
+  }
+
+
+  const pieOptions = {
+    animationEnabled: true,
+    theme: "light1", // "light1", "dark1", "dark2"
+    colorSet:"colorSet1",
+    data: [{
+      type: "pie",
+
+      indexLabel: "{label}: {y}%",
+      startAngle: -90,
+      dataPoints: [
+        { y: 70 },
+        { y: 30},
+      ]
+    }]
+  }
 
 
   useEffect(()=>{
   },[dispatch])
 
+
+
   const showDashboad=()=>{
 
 
-    const graph = {
-      nodes: [
-        { id: 0, label: "Kashan \n Marketing",color:"red"  },
-        { id: 1, label: "Muddasir \n Marketing", color:"red" },
-        { id: 2, label: "Kashan \n Marketing", color:"red" },
-        { id: 3, label: "Kashan \n Marketing", color:"red"},
-        { id: 4, label: "Kashan \n Marketing", color:"red" },
-        { id: 5, label: "Kashan \n Marketing", color:"red" },
-        { id: 6, label: "6", color:"green" },
-        { id: 7, label: "7", color:"green" },
-        { id: 8, label: "8", group: 2, color:"green" },
-        { id: 9, label: "9", group: 3, color:"green" },
-        { id: 10, label: "10", group: 3, color:"green" },
-        { id: 11, label: "11", group: 3, color:"green" },
-        { id: 12, label: "12", group: 3, color:"green" },
-        { id: 13, label: "13", group: 3, color:"green" },
-        { id: 14, label: "14", group: 3, color:"green" },
-        { id: 15, label: "15", group: 2, color:"green" },
-        { id: 16, label: "16", group: 3, color:"green" },
-        { id: 17, label: "17", group: 3, color:"green" },
-        { id: 18, label: "18", group: 3, color:"green" },
-        { id: 19, label: "19", group: 3, color:"green" },
-        { id: 20, label: "20", group: 3, color:"green" },
-        { id: 21, label: "21", group: 3, color:"green" },
-        { id: 22, label: "22", group: 3, color:"green" },
-        { id: 23, label: "23", group: 3, color:"green" },
-        { id: 24, label: "24", group: 3, color:"green" },
-        { id: 25, label: "25", group: 3, color:"green" },
-        { id: 26, label: "26", group: 3, color:"green" },
-        { id: 27, label: "27", group: 3, color:"green" },
-        { id: 28, label: "28", group: 3, color:"green" },
-        { id: 29, label: "29", group: 3, color:"green" },
-      ],
-      edges: [
-        { from: 1, to: 0 },
-        { from: 2, to: 0 },
-        { from: 4, to: 3 },
-        { from: 5, to: 4 },
-        { from: 4, to: 0 },
-        { from: 7, to: 6 },
-        { from: 8, to: 7 },
-        { from: 7, to: 0 },
-        { from: 10, to: 9 },
-        { from: 11, to: 10 },
-        { from: 10, to: 4 },
-        { from: 13, to: 12 },
-        { from: 14, to: 13 },
-        { from: 13, to: 0 },
-        { from: 16, to: 15 },
-        { from: 17, to: 15 },
-        { from: 15, to: 10 },
-        { from: 19, to: 18 },
-        { from: 20, to: 19 },
-        { from: 19, to: 4 },
-        { from: 22, to: 21 },
-        { from: 23, to: 22 },
-        { from: 22, to: 13 },
-        { from: 25, to: 24 },
-        { from: 26, to: 25 },
-        { from: 25, to: 7 },
-        { from: 28, to: 27 },
-        { from: 29, to: 28 },
-        { from: 28, to: 0 },
-      ]
-    };
 
-    var options = {
-      nodes: {
-        shape: "dot",
-        size: 30,
-        font: {
-          size: 20,
-          color: "black",
-        },
-        borderWidth: 2,
-      },
-      edges: {
-        width: 2,
-      },
-    };
+
 
     const events = {
       select: function(event) {
@@ -120,19 +148,19 @@ function Dashboard({history}) {
 
         return( <Container fluid>
         <Row>
-          <Col lg="4" sm="6">
+          <Col lg="3" sm="6">
             <Card className="card-stats card-stats-bg-1">
               <Card.Body>
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className=" text-white-util nc-icon nc-single-02 "></i>
+                      <i className=" text-primary nc-icon nc-single-02 "></i>
                     </div>
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category text-white-util">Total Employees</p>
-                      <Card.Title className="text-white-util" as="h4">284</Card.Title>
+                      <p className="card-category">Total Employees</p>
+                      <Card.Title className="" as="h4">284</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -140,19 +168,19 @@ function Dashboard({history}) {
 
             </Card>
           </Col>
-          <Col lg="4" sm="6">
+          <Col lg="3" sm="6">
             <Card className="card-stats card-stats-bg-2">
               <Card.Body>
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-email-85 text-white-util"></i>
+                      <i className="nc-icon nc-email-85 text-success"></i>
                     </div>
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className=" text-white-util card-category">Total Emails</p>
-                      <Card.Title className="text-white-util" as="h4">3600</Card.Title>
+                      <p className=" card-category">Total Emails</p>
+                      <Card.Title  as="h4">3600</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -160,13 +188,13 @@ function Dashboard({history}) {
 
             </Card>
           </Col>
-          <Col lg="4" sm="6">
+          <Col lg="3" sm="6">
             <Card className="card-stats card-stats-bg-3">
               <Card.Body>
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-bell-55 text-white-util"></i>
+                      <i className="nc-icon nc-bell-55 text-danger"></i>
                     </div>
                   </Col>
                   <Col xs="7">
@@ -180,38 +208,87 @@ function Dashboard({history}) {
 
             </Card>
           </Col>
+
+          <Col lg="3" sm="6">
+            <Card className="card-stats card-stats-bg-3">
+              <Card.Body>
+                <Row>
+                  <Col xs="5">
+                    <div className="icon-big text-center icon-warning">
+                      <i className="nc-icon nc-alien-33 text-warning"></i>
+                    </div>
+                  </Col>
+                  <Col xs="7">
+                    <div className="numbers">
+                      <p className=" text-white-util card-category">Burnout percentage</p>
+                      <Card.Title className="text-white-util" as="h4">20%</Card.Title>
+                    </div>
+                  </Col>
+                </Row>
+              </Card.Body>
+
+            </Card>
+          </Col>
         </Row>
-          <Row className="graphs-container">
-              <Col xs={6}>
-                <div style={{height:"800px", width: '800px'}}>
 
-                  <Graph
-                      graph={graph}
-                      options={options}
-                      events={events}
-                      getNetwork={network => {
-                        //  if you want access to vis.js network api you can set the state in a parent component using this property
-                      }}
-                  />
-                </div>
 
-              </Col>
-              <Col xs={6}>
-                <div style={{height:"800px", width: '800px'}}>
+          <Row>
+            <Col md="8">
+              <Card>
+                <Card.Header>
+                  <Card.Title as="h4">Threats in department</Card.Title>
+                  <p className="card-category">Monthly Stats</p>
+                </Card.Header>
+                <Card.Body>
+                  <div className="ct-chart" id="chartHours">
+                    <CanvasJSChart options = {departmentOptions}/>
 
-                  <Graph
-                      graph={graph}
-                      options={options}
-                      events={events}
-                      getNetwork={network => {
-                        //  if you want access to vis.js network api you can set the state in a parent component using this property
-                      }}
-                  />
-                </div>
-
-              </Col>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md="4">
+              <Card>
+                <Card.Header>
+                  <Card.Title as="h4">Company Health</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  <div
+                      className="ct-chart height-util ct-perfect-fourth"
+                      id="chartPreferences"
+                  >
+                    <CanvasJSChart options = {pieOptions}/>
+                  </div>
+                  <div className="legend">
+                    <i className="fas fa-circle text-info"></i>
+                    Normal Employees <i className="fas fa-circle text-danger"></i>
+                    Suspicious Employees
+                  </div>
+                  <hr></hr>
+                </Card.Body>
+              </Card>
+            </Col>
           </Row>
 
+          <Row>
+            <Col md="12">
+              <Card>
+                <Card.Header>
+                  <Card.Title as="h4">Email Sent and Received </Card.Title>
+                  <p className="card-category">Monthly Stats</p>
+                </Card.Header>
+                <Card.Body>
+                  <div
+                      className="ct-chart ct-perfect-fourth"
+                      id="chartPreferences"
+                  >
+                    <CanvasJSChart options = {emailOptions}/>
+                  </div>
+                  <hr></hr>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
 
 
       </Container>)
