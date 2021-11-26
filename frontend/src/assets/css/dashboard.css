@@ -16,3 +16,8 @@
 .height-util{
     height:403px !important;
 }
+
+.legend{
+    font-size:13px !important;
+    color:gray;
+}

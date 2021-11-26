@@ -1,11 +1,8 @@
 import React, {useState,useEffect} from 'react';
 import '../assets/css/login.css'
 import '../assets/css/login-stars.css'
-import adminAvatar from '../assets/img/admin.jpg'
-import superAdminAvatar from '../assets/img/super-admin.jpg'
 import logo from '../assets/img/logo.svg'
 import checkSymbol from '../assets/img/check.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SocialIcon } from 'react-social-icons';
 import Switch from "react-switch";
 import YellowButton from "../components/Buttons/YellowButton";
@@ -70,21 +67,21 @@ const Login = ({history}) => {
                     <Row>
                         <img  className="login-logo mt-2" src={logo} alt="logo"/>
                     </Row>
-                    <h2 className="mt-4 pt-4">Login to you account!</h2>
+                    <h4 style={{color:'gray'}} className="mt-4 pt-4">Login to your account</h4>
                     <Container>
-                        <Alert className='login-error' variant="danger">
-                            <button
-                                aria-hidden={true}
-                                className="close login-error-close"
-                                data-dismiss="alert"
-                                type="button"
-                            >
-                                {/*<i className="nc-icon nc-simple-remove"></i>*/}
-                            </button>
-                            <span>
-                    Wrong Email or Password
-                  </span>
-                        </Alert>
+                  {/*      <Alert className='login-error' variant="danger">*/}
+                  {/*          <button*/}
+                  {/*              aria-hidden={true}*/}
+                  {/*              className="close login-error-close"*/}
+                  {/*              data-dismiss="alert"*/}
+                  {/*              type="button"*/}
+                  {/*          >*/}
+                  {/*              /!*<i className="nc-icon nc-simple-remove"></i>*!/*/}
+                  {/*          </button>*/}
+                  {/*          <span>*/}
+                  {/*  Wrong Email or Password*/}
+                  {/*</span>*/}
+                  {/*      </Alert>*/}
 
                         <Form onSubmit={e=>{submitHandler(e)}}>
                             <Row className="justify-content-center">
@@ -147,7 +144,7 @@ const Login = ({history}) => {
 
                         </Form>
                     </Container>
-                    <div className="mt-auto mb-3">
+                    <div className="mt-auto mb-5 pb-1 ml-5">
                         <Row  className=" no-gutters d-flex flex-row justify-content-start align-items-start">
                             <Col  xs={1}>
                                 <SocialIcon bgColor="#6001d2" className="login-social" url="https://yahoo.com/" />

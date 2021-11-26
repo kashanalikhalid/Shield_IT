@@ -24,7 +24,7 @@ function Dashboard({history}) {
 
 
   const emailOptions = {
-    theme: "light1",
+    theme: "light2",
     animationEnabled: true,
     axisY: {
       title: "Emails"
@@ -80,11 +80,11 @@ function Dashboard({history}) {
 
 
   const departmentOptions = {
-    theme: "light1",
+    theme: "light2",
     animationEnabled: true,
-    axisY: {
-      title: "Threats"
-    },
+    // axisY: {
+    //   title: "Threats"
+    // },
     toolTip: {
       shared: true
     },
@@ -96,8 +96,9 @@ function Dashboard({history}) {
     },
 
     data: [{
-      type: "line",
-      color: 'green',
+      type: "scatter",
+      color: 'red',
+      markerSize: 15,
       name: "Threats",
       showInLegend: true,
       dataPoints: [

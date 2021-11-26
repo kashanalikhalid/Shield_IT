@@ -185,6 +185,7 @@ function Socialgraphs({history}) {
                     <Card>
                         <Card.Header>
                             <Card.Title as="h4">Social Graph</Card.Title>
+                            <p className="card-category">Zoom in or Zoom out</p>
                         </Card.Header>
                         <Card.Body>
                             <div className="ct-chart" id="chartHours">
