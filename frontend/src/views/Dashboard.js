@@ -82,9 +82,9 @@ function Dashboard({history}) {
   const departmentOptions = {
     theme: "light2",
     animationEnabled: true,
-    // axisY: {
-    //   title: "Threats"
-    // },
+    axisY: {
+      title: "No. of Threats"
+    },
     toolTip: {
       shared: true
     },
@@ -98,9 +98,9 @@ function Dashboard({history}) {
     data: [{
       type: "scatter",
       color: 'red',
-      markerSize: 15,
+      markerSize: 20,
       name: "Threats",
-      showInLegend: true,
+      // showInLegend: true,
       dataPoints: [
         { y: 5, label: "IT" },
         { y: 10, label: "Marketing" },
@@ -261,9 +261,10 @@ function Dashboard({history}) {
                     <CanvasJSChart options = {pieOptions}/>
                   </div>
                   <div className="legend">
-                    <i className="fas fa-circle text-info"></i>
-                    Normal Employees <i className="fas fa-circle text-danger"></i>
+                    <i className="fas fa-circle text-danger"></i>
                     Suspicious Employees
+                    <i className="fas fa-circle text-info"></i>
+                    Normal Employees
                   </div>
                   <hr></hr>
                 </Card.Body>

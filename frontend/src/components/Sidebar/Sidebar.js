@@ -110,7 +110,7 @@ function Sidebar({ color, image, routes }) {
                 }
             >
                 <NavLink onClick={()=>{setRadio('Outsider')}}   className="nav-link" to={'/admin/outsider'}>
-                    <span> <i className='nc-icon nc-cctv' /> <p>Threats </p> </span>
+                    <span> <i className='nc-icon nc-cctv' /> <p>Outsiders </p> </span>
                 </NavLink>
             </li>
 
